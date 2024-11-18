@@ -29,7 +29,15 @@ router.post('/new', async (req, res) => {
 router.delete('/:id', async (req,res)=>{
     const item = await Item.findByPk(req.params.id)
     await item.destroy()
-    res.status(204).send(item)
+    res.status(204).send('Item Destroyed')
+})
+
+router.put("/:id", async (req,res) =>{
+    await Item.update(req.body, {
+        where : {id: req.params.id}
+    });
+    const updatedItem  = await Item.findByPk(req.params.id)
+    res.status(202).send(updatedItem)
 })
 
 module.exports = router;
