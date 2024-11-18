@@ -89,7 +89,7 @@ describe("Item API routes", () => {
     expect(response.status).toBe(204);
   
     // Step 4: Verify the item was actually deleted by checking destroy was called
-    expect(mockItem.destroy).toHaveBeenCalledTimes(1); // Ensure destroy method was called once
+    expect(mockItem.destroy).toHaveBeenCalledTimes(1);
   });
   
 
