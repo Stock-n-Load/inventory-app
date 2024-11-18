@@ -14,5 +14,16 @@ router.get("/:id", async (req, res) => {
     res.send(item)
 })
 
+router.post('/new', async (req, res) => {
+    const { name, description, price, category, image } = req.body;  
+    const newItem = await Item.create({
+      name,
+      description,
+      price,
+      category,
+      image,
+    });  
+    res.status(201).json(newItem); 
+});
 
 module.exports = router;
