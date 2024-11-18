@@ -8,7 +8,7 @@ function AllItems({ setView }) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("../api/");
+      const response = await fetch(`${apiURL}/items`);
       const data = await response.json();
       setItems(data);
     } catch (err) {
@@ -22,16 +22,24 @@ function AllItems({ setView }) {
 
   return (
     <>
+      {console.log(items)}
       <h1>View All Items</h1>
       <button onClick={() => setView(3)}>Create Item</button>
       <button onClick={() => setView(2)}>View Single Item</button>
       {items &&
         items.map((item) => (
-          <div className="card">
-            <img src="..." className="card-img-top" alt="item image" />
+          <div className="card" key={item.name}>
+            <img
+              src={item.image}
+              className="card-img-top"
+              alt="item image"
+              style={{ width: "200px" }}
+            />
             <div className="card-body">
-              <h5 className="card-title">Item Name</h5>
-              <h5 className="card-title">Item Price</h5>
+              <h5 className="card-title">
+                <strong>{item.name}</strong>
+              </h5>
+              <h5 className="card-title">£{item.price.toFixed(2)}</h5>
             </div>
           </div>
         ))}
