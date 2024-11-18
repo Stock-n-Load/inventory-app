@@ -9,5 +9,10 @@ router.get('/' , async (req, res) => {
     res.send(items)
 })
 
+router.get("/:id", async (req, res) => {
+    const item = await Item.findByPk(req.params.id)
+    res.send(item)
+})
+
 
 module.exports = router;
