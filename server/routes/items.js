@@ -26,4 +26,10 @@ router.post('/new', async (req, res) => {
     res.status(201).json(newItem); 
 });
 
+router.delete('/:id', async (req,res)=>{
+    const item = await Item.findByPk(req.params.id)
+    await item.destroy()
+    res.status(204).send(item)
+})
+
 module.exports = router;
