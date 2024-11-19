@@ -42,6 +42,7 @@ function CreateItem({ setView }) {
   function handleSubmit(e) {
     e.preventDefault();
     postItem(name, price, category, imgurl, description);
+    //setView(2)
   }
 
   return (
