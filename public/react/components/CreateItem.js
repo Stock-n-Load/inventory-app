@@ -30,6 +30,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
         setPosted(true);
         console.log("Item created successfully!");
         const data = await response.json();
+        await new Promise((resolve) => setTimeout(resolve, 100));
         setActiveItem(data);
         console.log(data);
       } else {
@@ -44,8 +45,8 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await postItem(name, price, category, imgurl, description);
-    await fetchData();
+    postItem(name, price, category, imgurl, description);
+    fetchData();
     setView(2);
   }
 

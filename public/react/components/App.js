@@ -59,6 +59,7 @@ function App() {
       setView={setView}
       activeItem={activeItem}
       setActiveItem={setActiveItem}
+      fetchData={fetchData}
     />
   ) : view === CREATE_ITEM_VIEW ? (
     <CreateItem

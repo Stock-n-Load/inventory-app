@@ -50,7 +50,6 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
 
   return (
     <>
-      <button onClick={() => setView(1)}>Back</button>
       <h1>Edit Item</h1>
       <form onSubmit={handleSubmit}>
         <ol>
