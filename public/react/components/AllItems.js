@@ -32,7 +32,7 @@ function AllItems({ view, setView, items, setActiveItem }) {
               <h5 className="card-title">
                 <strong>{item.name}</strong>
               </h5>
-              <h5 className="card-title">£{item.price.toFixed(2)}</h5>
+              <h5 className="card-title">${item.price.toFixed(2)}</h5>
             </div>
           </div>
         ))}
