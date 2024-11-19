@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // Prepend the API URL to any fetch calls.
 import apiURL from "../api";
 
-function AllItems({ setView }) {
+function AllItems({ setView, setActiveItem }) {
   const [items, setItems] = useState([]);
 
   const fetchData = async () => {
@@ -15,10 +15,14 @@ function AllItems({ setView }) {
       console.log(`Error fetching data: ${err}`);
     }
   };
-
   useEffect(() => {
     fetchData();
   }, []);
+
+  function handleSingleItem(item) {
+    setActiveItem(item);
+    setView(2);
+  }
 
   return (
     <>
@@ -28,7 +32,12 @@ function AllItems({ setView }) {
       <button onClick={() => setView(2)}>View Single Item</button>
       {items &&
         items.map((item) => (
-          <div className="card" key={item.name}>
+          <div
+            onClick={() => handleSingleItem(item)}
+            style={{ cursor: "pointer" }}
+            className="card"
+            key={item.id}
+          >
             <img
               src={item.image}
               className="card-img-top"

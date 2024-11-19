@@ -14,17 +14,17 @@ const CREATE_ITEM_VIEW = 3;
 const EDIT_ITEM_VIEW = 4;
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [activeItem, setActiveItem] = useState([]);
   const [view, setView] = useState(ALL_ITEM_VIEW);
 
-  useEffect(() => {
-    // Fetch the items
-  }, []);
-
   return view === ALL_ITEM_VIEW ? (
-    <AllItems setView={setView} />
+    <AllItems setView={setView} setActiveItem={setActiveItem} />
   ) : view === SINGLE_ITEM_VIEW ? (
-    <SingleItem setView={setView} />
+    <SingleItem
+      setView={setView}
+      activeItem={activeItem}
+      setActiveItem={setActiveItem}
+    />
   ) : view === CREATE_ITEM_VIEW ? (
     <CreateItem setView={setView} />
   ) : view === EDIT_ITEM_VIEW ? (
