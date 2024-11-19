@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import apiURL from "../api";
 
-function EditItem({ setView, activeItem, setActiveItem }) {
+function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
   // Initialize state with active item values if available
   const [name, setName] = useState(activeItem?.name || "");
   const [price, setPrice] = useState(activeItem?.price || "");
@@ -12,10 +11,10 @@ function EditItem({ setView, activeItem, setActiveItem }) {
 
   // Function to send PUT request to update the item
   async function updateItem(id, name, price, category, imgurl, description) {
-    const response = await fetch(`${apiURL}/items/${id}`, {   
-      method: "PUT",  
+    const response = await fetch(`${apiURL}/items/${id}`, {
+      method: "PUT",
       headers: {
-        "Content-Type": "application/json",  
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: name,
@@ -25,25 +24,26 @@ function EditItem({ setView, activeItem, setActiveItem }) {
         description: description,
       }),
     });
-  
+
     if (response.ok) {
-      const data = await response.json();  
+      const data = await response.json();
       console.log("Item updated successfully:", data);
-      
+
       // Set the active item with updated data
       setActiveItem(data);
 
       // Redirect to view 2 after successful update
+      await fetchData();
       setView(2);
     } else {
-      console.error("Failed to update item:", response.statusText);  
+      console.error("Failed to update item:", response.statusText);
     }
   }
 
   // Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
-    
+
     // Call the updateItem function with the active item ID and new data
     updateItem(activeItem.id, name, price, category, imgurl, description);
   }

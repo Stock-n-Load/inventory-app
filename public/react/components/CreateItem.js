@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import apiURL from "../api";
-function CreateItem({ setView }) {
+function CreateItem({ setView, setActiveItem, fetchData }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
@@ -29,6 +29,9 @@ function CreateItem({ setView }) {
       if (response.ok) {
         setPosted(true);
         console.log("Item created successfully!");
+        const data = await response.json();
+        setActiveItem(data);
+        console.log(data);
       } else {
         console.error("Failed to create item.");
       }
@@ -39,10 +42,11 @@ function CreateItem({ setView }) {
     }
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    postItem(name, price, category, imgurl, description);
-    //setView(2)
+    await postItem(name, price, category, imgurl, description);
+    await fetchData();
+    setView(2);
   }
 
   return (
