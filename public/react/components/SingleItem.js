@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import apiURL from "../api";
 
-function SingleItem({ setView, activeItem, setActiveItem }) {
+function SingleItem({ view, setView, activeItem, setActiveItem }) {
   function handleBackToAllItems() {
     setView(1);
     setActiveItem([]);
@@ -45,31 +45,3 @@ function SingleItem({ setView, activeItem, setActiveItem }) {
 }
 
 export default SingleItem;
-
-// const deleteItem = (id) => {
-//   // URL of the API endpoint
-//   const url = `https://api.example.com/items/${id}`;
-
-//   // Use fetch to make the DELETE request
-//   fetch(url, {
-//     method: 'DELETE', // HTTP method is DELETE
-//     headers: {
-//       'Content-Type': 'application/json', // Set content type if necessary
-//       // Add Authorization headers if required, e.g., Bearer token
-//       // 'Authorization': `Bearer ${yourToken}`,
-//     },
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error('Failed to delete item');
-//       }
-//       return response.json(); // Parse the response body (if needed)
-//     })
-//     .then((data) => {
-//       console.log('Item deleted:', data);
-//       // You can update your state here, e.g., by removing the item from the list
-//     })
-//     .catch((error) => {
-//       console.error('Error:', error);
-//     });
-// };
