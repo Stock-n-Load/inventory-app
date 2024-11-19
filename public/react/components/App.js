@@ -26,9 +26,9 @@ function App() {
   ) : view === SINGLE_ITEM_VIEW ? (
     <SingleItem setView={setView} />
   ) : view === CREATE_ITEM_VIEW ? (
-    <CreateItemForm setView={setView} />
+    <CreateItem setView={setView} />
   ) : view === EDIT_ITEM_VIEW ? (
-    <EditItemForm setView={setView} />
+    <EditItem setView={setView} />
   ) : (
     <>
       <h1>Error creating view</h1>
