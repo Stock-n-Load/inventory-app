@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import apiURL from "../api";
 
-function SingleItem({ view, setView, activeItem, setActiveItem }) {
+function SingleItem({ view, setView, activeItem, setActiveItem, fetchData }) {
   function handleBackToAllItems() {
     setView(1);
     setActiveItem([]);
@@ -19,6 +19,7 @@ function SingleItem({ view, setView, activeItem, setActiveItem }) {
     } catch (error) {
       console.log(`Error message: ${error}`);
     }
+    fetchData();
     setActiveItem([]);
     setView(1);
   }
@@ -30,7 +31,7 @@ function SingleItem({ view, setView, activeItem, setActiveItem }) {
       <button onClick={() => setView(4)}>Edit Item</button>
       <button onClick={() => handleDeleteItem()}>Delete Item</button>
       <h2>{activeItem.name}</h2>
-      <p>£{activeItem.price.toFixed(2)}</p>
+      <p>£{parseFloat(activeItem.price).toFixed(2)}</p>
       <img
         src={activeItem.image}
         className="card-img-top"
