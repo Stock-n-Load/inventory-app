@@ -14,3 +14,11 @@ body {
 img {
   max-width: 100%;
 }
+
+ol li{
+  list-style-type: none;
+}
+
+textarea.NewItemForm {
+  resize: none;
+}
