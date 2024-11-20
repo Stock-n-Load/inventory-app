@@ -26,7 +26,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
         }),
       });
 
-      if (response.ok) {
+      if (response.status === 201) {
         setPosted(true);
         console.log("Item created successfully!");
         const data = await response.json();
@@ -35,6 +35,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
         console.log(data);
       } else {
         console.error("Failed to create item.");
+        setView(3)
       }
     } catch (error) {
       console.error("Error posting item:", error);
@@ -60,46 +61,46 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
 
       <form onSubmit={handleSubmit}>
         <ol>
-          <li>
+          <li>Name
             <textarea
               className="NewItemForm"
-              placeholder="Name"
+              placeholder="Your Items Name"
               value={name}
               required
               onChange={(e) => setName(e.target.value)}
             ></textarea>
           </li>
-          <li>
+          <li>Price
             <textarea
               className="NewItemForm"
-              placeholder="Price"
+              placeholder="Must be Numbers only"
               value={price}
               required
               onChange={(e) => setPrice(e.target.value)}
             ></textarea>
           </li>
-          <li>
+          <li>Category
             <textarea
               className="NewItemForm"
-              placeholder="Category"
+              placeholder="e.g Electonics, Clothing..."
               value={category}
               required
               onChange={(e) => setCategory(e.target.value)}
             ></textarea>
           </li>
-          <li>
+          <li>Image Url
             <textarea
               className="NewItemForm"
-              placeholder="Image Url"
+              placeholder="Must be a URL format"
               value={imgurl}
               required
               onChange={(e) => setImgurl(e.target.value)}
             ></textarea>
           </li>
-          <li>
+          <li>Description
             <textarea
               className="NewItemForm"
-              placeholder="Description"
+              placeholder="Minimum 10 Characters"
               value={description}
               required
               onChange={(e) => setDescription(e.target.value)}
