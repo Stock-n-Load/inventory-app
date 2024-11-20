@@ -36,20 +36,30 @@ function AllItems({ view, setView, items, setActiveItem }) {
   return (
     <>
       <h1 className="header-1">View All Items</h1>
-      <button onClick={() => setView(3)}>Create Item</button>
-
-      <SearchBar setSearchTerm={setSearchTerm} />
-
-      <select
-        onChange={(e) => setSortOption(e.target.value)}
-        value={sortOption}
-      >
-        <option value="">Sort By</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-        <option value="name-asc">Name: A to Z</option>
-        <option value="name-desc">Name: Z to A</option>
-      </select>
+      <div className="searchBarContainer-1">
+        <SearchBar setSearchTerm={setSearchTerm} />
+        <button
+          className="btn btn-success createItemBtn-1"
+          onClick={() => setView(3)}
+        >
+          <span className="createItemText-1">Create Item</span>{" "}
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      <div className="dropdown-1">
+        <p>Sort By:</p>
+        <select
+          className="form-select form-select-sm"
+          onChange={(e) => setSortOption(e.target.value)}
+          value={sortOption}
+        >
+          <option value="">All</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A to Z</option>
+          <option value="name-desc">Name: Z to A</option>
+        </select>
+      </div>
 
       <div className="itemsContainer-1">
         {sortedItems &&
