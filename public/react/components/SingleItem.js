@@ -4,6 +4,7 @@ import apiURL from "../api";
 
 function SingleItem({ view, setView, activeItem, setActiveItem, fetchData }) {
   function handleBackToAllItems() {
+    fetchData();
     setView(1);
     setActiveItem([]);
   }
