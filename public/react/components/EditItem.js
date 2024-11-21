@@ -64,6 +64,14 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
     }
   }, [activeItem, description]);
 
+  useEffect(() => {
+    const textarea = document.getElementById("image-textarea");
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${textarea.scrollHeight}px`; 
+    }
+  }, [activeItem, imgurl]);
+
   return (
     <>
       <div className="d-flex justify-content-between align-items-center p-3">
@@ -111,6 +119,7 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
             <textarea
               className="NewItemForm"
               placeholder="Image Url"
+              id="image-textarea"
               required
               value={imgurl}
               onChange={(e) => setImgurl(e.target.value)}
@@ -120,6 +129,7 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
             <textarea
               className="NewItemForm"
               placeholder="Description"
+              id="description-textarea"
               required
               value={description}
               onChange={handleDescriptionChange}

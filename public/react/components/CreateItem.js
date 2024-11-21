@@ -60,6 +60,13 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
     setDescription(e.target.value);
   };
 
+  const handleImageChange = (e) => {
+    const textarea = e.target;
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    setImgurl(e.target.value);
+  };
+
   return (
     <>
       <div className="d-flex justify-content-between align-items-center p-3">
@@ -115,7 +122,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               placeholder="Must be a URL format"
               value={imgurl}
               required
-              onChange={(e) => setImgurl(e.target.value)}
+              onChange={handleImageChange}
             ></textarea>
           </li>
           <li>
