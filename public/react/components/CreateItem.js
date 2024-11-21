@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import apiURL from "../api";
-import './CreateItem.css'
+import "./CreateItem.css";
 
 function CreateItem({ setView, setActiveItem, fetchData }) {
   const [name, setName] = useState("");
@@ -37,7 +37,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
         console.log(data);
       } else {
         console.error("Failed to create item.");
-        setView(3)
+        setView(3);
       }
     } catch (error) {
       console.error("Error posting item:", error);
@@ -53,17 +53,33 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
     setView(2);
   }
 
+  const handleDescriptionChange = (e) => {
+    const textarea = e.target;
+    textarea.style.height = "auto"; 
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    setDescription(e.target.value);
+  };
+
   return (
     <>
-      <button onClick={() => setView(1)}>Back</button>
-      <h1 className="createHeader">Create Item</h1>
-
+      <div className="d-flex justify-content-between align-items-center p-3">
+        <h1 className="m-0">Stock n Load</h1>
+        <button
+          type="button"
+          className="btn btn-secondary rounded-5 me-2"
+          onClick={() => setView(1)}
+        >
+          <i class="fa-solid fa-arrow-left me-4 "></i>
+          Back
+        </button>
+      </div>
+      <h2 className="createHeader">Create Item</h2>
       {loading && <p>Loading...</p>}
       {posted && <p>Item successfully created!</p>}
-
       <form onSubmit={handleSubmit}>
         <ol>
-          <li>Name
+          <li>
+            Name
             <textarea
               className="NewItemForm"
               placeholder="Your Items Name"
@@ -72,7 +88,8 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               onChange={(e) => setName(e.target.value)}
             ></textarea>
           </li>
-          <li>Price
+          <li>
+            Price
             <textarea
               className="NewItemForm"
               placeholder="Must be Numbers only"
@@ -81,7 +98,8 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               onChange={(e) => setPrice(e.target.value)}
             ></textarea>
           </li>
-          <li>Category
+          <li>
+            Category
             <textarea
               className="NewItemForm"
               placeholder="e.g Electonics, Clothing..."
@@ -90,7 +108,8 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               onChange={(e) => setCategory(e.target.value)}
             ></textarea>
           </li>
-          <li>Image Url
+          <li>
+            Image Url
             <textarea
               className="NewItemForm"
               placeholder="Must be a URL format"
@@ -99,18 +118,19 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               onChange={(e) => setImgurl(e.target.value)}
             ></textarea>
           </li>
-          <li>Description
+          <li>
+            Description
             <textarea
               className="NewItemForm"
               placeholder="Minimum 10 Characters"
               value={description}
               required
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={handleDescriptionChange}
             ></textarea>
           </li>
         </ol>
-        <button className="submit"type="submit" disabled={loading}>
-          Submit Form
+        <button className="submit" type="submit" disabled={loading}>
+          Add Item
         </button>
       </form>
     </>
