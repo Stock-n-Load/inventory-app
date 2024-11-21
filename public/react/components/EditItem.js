@@ -48,9 +48,35 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
     updateItem(activeItem.id, name, price, category, imgurl, description);
   }
 
+  const handleDescriptionChange = (e) => {
+    const textarea = e.target;
+    textarea.style.height = "auto"; 
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    setDescription(e.target.value);
+  };
+
+  useEffect(() => {
+    const textarea = document.getElementById("description-textarea");
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${textarea.scrollHeight}px`; 
+    }
+  }, [activeItem, description]);
+
   return (
     <>
-      <h1>Edit Item</h1>
+      <div className="d-flex justify-content-between align-items-center p-3">
+        <h1 className="m-0">Stock n Load</h1>
+        <button
+          type="button"
+          className="btn btn-secondary rounded-5 me-2"
+          onClick={() => setView(1)}
+        >
+          <i class="fa-solid fa-arrow-left me-4 "></i>
+          Back
+        </button>
+      </div>
+      <h2 className="createHeader">Edit Item</h2>
       <form onSubmit={handleSubmit}>
         <ol>
           <li>
@@ -95,12 +121,11 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
               placeholder="Description"
               required
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={handleDescriptionChange}
             ></textarea>
           </li>
         </ol>
-        <button type="submit">Submit Form</button>
-        <button onClick={() => setView(2)}>Back Button</button>
+        <button className="submit" type="submit">Update</button>
       </form>
     </>
   );
