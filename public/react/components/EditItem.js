@@ -73,7 +73,7 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
           className="btn btn-secondary rounded-5 me-2"
           onClick={() => setView(1)}
         >
-          <i class="fa-solid fa-arrow-left me-4 "></i>
+          <i className="fa-solid fa-arrow-left me-4 "></i>
           Back
         </button>
       </div>
