@@ -1,0 +1,74 @@
+.header-1 {
+  /* color: green; */
+}
+
+.itemsContainer-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  /* justify-content: flex-start; */
+}
+
+.card {
+  /* min-width: 300px !important; */
+  /* max-width: 300px; */
+  /* display: flex; */
+  width: 300px;
+  /* margin: 10px 10px; */
+}
+
+.itemCard-1 {
+  /* min-height: 500px; */
+}
+
+.item-img-1 {
+  width: 80%;
+  margin: auto;
+  /* padding-top: 1rem; */
+  padding-bottom: 2rem;
+  max-height: 300px;
+}
+
+.card-body {
+  display: flex;
+  /* align-content: flex-end;*/
+  /* justify-content: end; */
+  flex-direction: column;
+}
+
+.searchBarContainer-1 {
+  display: flex;
+  width: 75%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.searchBar-1 {
+  flex-grow: 1;
+}
+
+.createItemBtn-1 {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 460px) {
+  .createItemText-1 {
+    display: none;
+  }
+}
+
+.dropdown-1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 75%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.dropdown-1 select {
+  margin-left: 10px;
+  width: 165px;
+}

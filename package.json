@@ -4,7 +4,7 @@
   "scripts": {
     "test": "jest",
     "client-dev": "parcel public/index.html --open",
-    "server-dev": "nodemon server.js",
+    "server-dev": "nodemon --watcher server.js",
     "seed": "node server/seed.js",
     "start": "parcel build public/index.html && npm run seed && node server.js",
     "preclient-dev": "rm -rf .parcel-cache/"
