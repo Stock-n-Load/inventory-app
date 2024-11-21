@@ -38,7 +38,7 @@ function AllItems({ view, setView, items, setActiveItem }) {
     <>
       <div className="navBar">
         <div className="logo-container">
-          <img src={logo} alt="logo" className="logo" />
+          <img src={logo} alt="logo" className="logo-all-items" />
           <h1 className="logo-title">Stock-N-Load</h1>
         </div>
       </div>

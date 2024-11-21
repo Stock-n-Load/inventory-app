@@ -40,18 +40,19 @@ function SingleItem({ view, setView, activeItem, setActiveItem, fetchData }) {
           <img src={logo} alt="logo" className="logo" />
           <h1 className="logo-title">Stock-N-Load</h1>
         </div>
+        <div className="d-flex justify-content-end back-btn-container">
+          <button
+            type="button"
+            className="btn btn-secondary back-btn rounded-5 btn-sm"
+            onClick={() => handleBackToAllItems()}
+          >
+            <i className="fa-solid fa-arrow-left"></i>
+            <span className="backbtn-text ms-4">Back</span>
+          </button>
+        </div>
       </div>
-      <div className="d-flex justify-content-end mx-5">
-        <button
-          type="button"
-          className="btn btn-secondary back-btn rounded-5 btn-sm"
-          onClick={() => handleBackToAllItems()}
-        >
-          <i className="fa-solid fa-arrow-left"></i>
-          <span className="backbtn-text ms-4">Back</span>
-        </button>
-      </div>
-      <div className="Single-card-2 mx-5">
+
+      <div className="Single-card-2">
         <strong>{activeItem.name}</strong>
         <h5>£{parseFloat(activeItem.price).toFixed(2)}</h5>
         <div className="img-box-2">
