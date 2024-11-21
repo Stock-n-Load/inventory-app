@@ -20,7 +20,7 @@ router.post(
   [
     body("name").notEmpty().withMessage("Name is required."),
     body("description")
-      .isLength({ min: 10 })
+      .isLength({ min: 10, max:1000 })
       .withMessage("Description must be at least 10 characters long."),
     body("price").isNumeric().withMessage("Price must be a valid number."),
     body("category").notEmpty().withMessage("Category is required."),

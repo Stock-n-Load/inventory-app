@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import apiURL from "../api";
+import './CreateItem.css'
+
 function CreateItem({ setView, setActiveItem, fetchData }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -54,7 +56,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
   return (
     <>
       <button onClick={() => setView(1)}>Back</button>
-      <h1>Create Item</h1>
+      <h1 className="createHeader">Create Item</h1>
 
       {loading && <p>Loading...</p>}
       {posted && <p>Item successfully created!</p>}
@@ -107,7 +109,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
             ></textarea>
           </li>
         </ol>
-        <button type="submit" disabled={loading}>
+        <button className="submit"type="submit" disabled={loading}>
           Submit Form
         </button>
       </form>
