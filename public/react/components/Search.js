@@ -7,9 +7,9 @@ function SearchBar({ setSearchTerm }) {
   };
 
   return (
-    <form class="d-flex searchBar-1" role="search">
+    <form className="d-flex searchBar-1" role="search">
       <input
-        class="form-control"
+        className="form-control"
         type="search"
         placeholder="Search items..."
         aria-label="Search"
