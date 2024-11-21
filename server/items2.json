@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "name": "Michelin Pilot Sport 4S Tire",
+    "price": 199.99,
+    "description": "The Michelin Pilot Sport 4S is designed for ultra-high-performance vehicles, providing exceptional grip and handling for both wet and dry conditions. Ideal for sports cars and performance sedans.",
+    "category": "tires",
+    "image": "https://tbc.scene7.com/is/image/TBCCorporation/16586-michelin-sport-all-season-4-wheel-01-v1"
+  },
+  {
+    "id": 2,
+    "name": "Goodyear Eagle F1 Asymmetric 3",
+    "price": 179.99,
+    "description": "A high-performance tire designed to deliver excellent wet and dry handling. With innovative technology to enhance braking performance, this tire is perfect for drivers seeking precision and control.",
+    "category": "tires",
+    "image": "https://www.goodyear.com.my/wp-content/uploads/EF1_A3_SIDERIM.png"
+  },
+  {
+    "id": 3,
+    "name": "Bridgestone Potenza RE980AS",
+    "price": 159.99,
+    "description": "The Bridgestone Potenza RE980AS is an all-season tire that provides balanced performance across various weather conditions, featuring a tread design that delivers responsive handling and superior comfort.",
+    "category": "tires",
+    "image": "https://i5.walmartimages.com/asr/94762f1c-6fd1-4ce1-b007-9f831753b49d.0a513ec85eb2e45fc6f7d716ea78736a.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
+  },
+  {
+    "id": 4,
+    "name": "Pirelli P Zero",
+    "price": 249.99,
+    "description": "Pirelli’s P Zero is designed for sports and luxury cars. With advanced technology and a high-performance tread pattern, it offers excellent traction, braking, and handling at high speeds.",
+    "category": "tires",
+    "image": "https://tyre-assets.pirelli.com/dynamic_engine/assets/visori/cake/PZeroMS_visore_cake.png"
+  },
+  {
+    "id": 5,
+    "name": "Continental ExtremeContact DWS06 Plus",
+    "price": 189.99,
+    "description": "This ultra-high-performance tire provides outstanding dry, wet, and snow traction. The Continental ExtremeContact DWS06 Plus is perfect for performance sedans and sporty coupes, with improved wear resistance.",
+    "category": "tires",
+    "image": "https://m.media-amazon.com/images/I/81H+915Z7cL.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Bosch S5 Car Battery",
+    "price": 159.99,
+    "description": "The Bosch S5 Car Battery offers extended life and high performance for vehicles with advanced electrical systems. It is built with AGM technology, ensuring greater power delivery for start-stop systems.",
+    "category": "car batteries",
+    "image": "https://images.lteplatform.com/images/products/600x600/444770968.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Optima RedTop 34/78 Battery",
+    "price": 189.99,
+    "description": "The Optima RedTop 34/78 is a high-performance car battery designed for starting power and reliability. It's ideal for cars, trucks, and SUVs that require a powerful start in extreme weather conditions.",
+    "category": "car batteries",
+    "image": "https://d2lum58i3w4swj.cloudfront.net/clarios/imgs/opticat/5373694.jpg"
+  },
+  {
+    "id": 8,
+    "name": "ACDelco 48AGM Professional AGM Automotive Battery",
+    "price": 159.99,
+    "description": "The ACDelco 48AGM is an AGM battery designed to deliver the reliable performance needed in today’s vehicles. It features enhanced lifespan and maintenance-free operation, making it ideal for modern vehicles with higher electrical demands.",
+    "category": "car batteries",
+    "image": "https://ecom-dam.ext.gm.com/products/images/88866188_Alternate1.jpg/640X640"
+  },
+  {
+    "id": 9,
+    "name": "DieHard Gold 75829 Car Battery",
+    "price": 129.99,
+    "description": "The DieHard Gold 75829 offers a durable and long-lasting power source. Known for its great starting power, it is an excellent choice for many domestic and import vehicles.",
+    "category": "car batteries",
+    "image": "https://shop.advanceautoparts.com/wcsstore/CVWEB/staticproductimage/2916/large/99996789_gol_852_pri_larg.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Odyssey PC680 Automotive Battery",
+    "price": 189.99,
+    "description": "The Odyssey PC680 is a highly reliable and durable automotive battery, providing superior cranking power and deep cycle performance for demanding vehicles, including motorcycles and off-road vehicles.",
+    "category": "car batteries",
+    "image": "https://raceandrally.com/media/catalog/product/p/c/pc680_-_600_x_600.png"
+  },
+  {
+    "id": 11,
+    "name": "Philips X-tremeVision +130% H11 Halogen Headlight Bulb",
+    "price": 29.99,
+    "description": "The Philips X-tremeVision H11 halogen headlight bulb offers a 130% brighter light compared to standard bulbs. Perfect for drivers who need enhanced visibility and safety on the road.",
+    "category": "car headlight bulbs",
+    "image": "https://www.powerbulbs.com/uploads/images/powerbulbs/Philips-X-tremeVision-Pro150-H1-Car-Headlight-Bulbs-Twin-12258XVPS2-1a.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Sylvania SilverStar Ultra H7 Halogen Headlight Bulb",
+    "price": 34.99,
+    "description": "Sylvania SilverStar Ultra H7 halogen headlight bulbs provide up to 50% more light on the road compared to standard halogen bulbs. Designed for enhanced night driving visibility and improved performance.",
+    "category": "car headlight bulbs",
+    "image": "https://apim.canadiantire.ca/v1/product/api/v1/product/image/0202884p?baseStoreId=CTR&lang=en_CA&subscription-key=c01ef3612328420c9f5cd9277e815a0e&imwidth=640&impolicy=mZoom"
+  },
+  {
+    "id": 13,
+    "name": "Osram Night Breaker Laser H4 Halogen Headlight Bulb",
+    "price": 39.99,
+    "description": "The Osram Night Breaker Laser H4 halogen bulb delivers up to 130% more light on the road for greater visibility. Its optimized design ensures superior performance in all weather conditions.",
+    "category": "car headlight bulbs",
+    "image": "https://i0.wp.com/rvclimited.co.uk/wp-content/uploads/2021/02/osram-night-h7.jpg?fit=400%2C400&ssl=1"
+  },
+  {
+    "id": 14,
+    "name": "Nokya Arctic White H1 Halogen Headlight Bulb",
+    "price": 22.99,
+    "description": "Nokya Arctic White H1 halogen headlight bulbs provide a bright, white light that enhances the appearance and performance of your vehicle. Ideal for drivers seeking a stylish and powerful lighting solution.",
+    "category": "car headlight bulbs",
+    "image": "https://i.ebayimg.com/images/g/s~8AAOSwsjdboCC6/s-l400.jpg"
+  },
+  {
+    "id": 15,
+    "name": "GE Nighthawk Platinum H8 Halogen Headlight Bulb",
+    "price": 41.99,
+    "description": "The GE Nighthawk Platinum H8 bulb provides 30% more light on the road, offering brighter illumination and increased visibility. A perfect choice for drivers who want improved night driving performance.",
+    "category": "car headlight bulbs",
+    "image": "https://m.media-amazon.com/images/I/910CUJuP9FL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Mobil 1 5W-30 Full Synthetic Motor Oil",
+    "price": 27.99,
+    "description": "Mobil 1 5W-30 full synthetic motor oil is designed for high-performance engines, providing outstanding protection against engine wear, deposits, and sludge. Ideal for modern vehicles.",
+    "category": "motor oil",
+    "image": "https://www.mobil.co.uk/-/media/project/wep/mobil/mobil-gb/updated-uk-images/mobil-1-esp-5w-30/m1-esp-0w-50-1l-fs-square-md_319x319.png"
+  },
+  {
+    "id": 17,
+    "name": "Castrol EDGE 0W-20 Full Synthetic Motor Oil",
+    "price": 32.99,
+    "description": "Castrol EDGE 0W-20 full synthetic motor oil delivers superior performance and protection in extreme driving conditions. Perfect for vehicles requiring low viscosity oils for better fuel economy.",
+    "category": "motor oil",
+    "image": "https://cdn.media.halfords.com/i/washford/736502/Castrol-EDGE-0W-20-LL-IV-4L?fmt=auto&qlt=default&$sfcc_tile$&w=680"
+  },
+  {
+    "id": 18,
+    "name": "Royal Purple 5W-20 High Performance Motor Oil",
+    "price": 41.99,
+    "description": "Royal Purple 5W-20 high-performance motor oil improves engine performance by reducing friction and wear. It's formulated to maximize horsepower and fuel efficiency, ideal for performance engines.",
+    "category": "motor oil",
+    "image": "https://trqcdn-1e162.kxcdn.com/143907-thickbox_default/royal-purple-api-licensed-multi-grade-sae-5w-20-synthetic-motor-oil-1-quart-x-6.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Valvoline Advanced Full Synthetic 5W-30 Motor Oil",
+    "price": 24.99,
+    "description": "Valvoline Advanced Full Synthetic 5W-30 motor oil offers excellent protection against heat, deposits, and wear. It provides long-lasting protection, even under the toughest driving conditions.",
+    "category": "motor oil",
+    "image": "https://cdn.opieoils.co.uk/images/variants/medium/valvoline/valvoline-synpower-5w-30-4litres-1.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Mobil 1 High Mileage 10W-30 Motor Oil",
+    "price": 29.99,
+    "description": "Mobil 1 High Mileage 10W-30 motor oil is specially formulated for vehicles with over 75,000 miles. It helps to reduce oil consumption, control sludge, and prevent leaks, while improving engine life.",
+    "category": "motor oil",
+    "image": "https://m.media-amazon.com/images/I/61DUTdyd2-L.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Little Trees Black Ice Air Freshener",
+    "price": 3.99,
+    "description": "Little Trees Black Ice air freshener provides a refreshing and masculine scent that neutralizes odors while leaving a crisp, clean fragrance in your car. Perfect for all types of vehicles.",
+    "category": "air fresheners",
+    "image": "https://m.media-amazon.com/images/I/61mDqtMBeQL.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Jelly Belly Car Air Freshener - Very Cherry",
+    "price": 4.49,
+    "description": "The Jelly Belly Very Cherry car air freshener offers a sweet and fruity scent inspired by the famous jelly bean flavor. Great for adding a fun and pleasant fragrance to your car interior.",
+    "category": "air fresheners",
+    "image": "https://m.media-amazon.com/images/I/61cAADCrPsL.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Febreze Car Air Freshener - Linen & Sky",
+    "price": 5.99,
+    "description": "Febreze Car Air Freshener in Linen & Sky brings the fresh scent of linens drying in a spring breeze, leaving your car smelling fresh and clean. Eliminates odors and refreshes the air.",
+    "category": "air fresheners",
+    "image": "https://m.media-amazon.com/images/I/812oU-JlQ7L.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Little Trees New Car Scent Air Freshener",
+    "price": 3.99,
+    "description": "Little Trees New Car Scent air freshener creates the smell of a fresh, clean car interior. It eliminates unwanted odors and provides a lasting fragrance that’s perfect for car lovers.",
+    "category": "air fresheners",
+    "image": "https://www.powerbulbs.com/uploads/images/mtr0002_750_750.png"
+  },
+  {
+    "id": 25,
+    "name": "Air Spencer Car Air Freshener - Refill with Squash Scent",
+    "price": 7.99,
+    "description": "Air Spencer's Squash Scent car air freshener refill provides a vibrant citrus fragrance that removes odors and freshens your car with a long-lasting, crisp scent.",
+    "category": "air fresheners",
+    "image": "https://drivendistrict.com/cdn/shop/products/giga_squash_refill_1080x.jpg?v=1635922324"
+  },
+  {
+    "id": 26,
+    "name": "Garmin DriveSmart 65 & Traffic GPS Navigator",
+    "price": 199.99,
+    "description": "The Garmin DriveSmart 65 features a 6.95-inch display with built-in traffic updates, voice-activated navigation, and easy-to-follow directions. It also includes detailed maps of North America.",
+    "category": "sat nav",
+    "image": "https://m.media-amazon.com/images/I/716deE+stUL.jpg"
+  },
+  {
+    "id": 27,
+    "name": "TomTom Go 620 6-inch GPS Navigation System",
+    "price": 159.99,
+    "description": "The TomTom Go 620 offers real-time traffic updates, lifetime maps, and advanced lane guidance with a 6-inch touchscreen. It also features hands-free calling and voice control.",
+    "category": "sat nav",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvrHx9Zu5GaEdXxoj2PZHXvTclG7mRnhjtGg&s"
+  },
+  {
+    "id": 28,
+    "name": "Garmin Nuvi 57LMT 5-inch GPS Navigator",
+    "price": 129.99,
+    "description": "The Garmin Nuvi 57LMT offers a 5-inch screen with free lifetime map updates and live traffic avoidance. It includes turn-by-turn directions and junction views for better navigation.",
+    "category": "sat nav",
+    "image": "https://static1.nordic.pictures/889190-thickbox_default/garmin-nuvi-68lm.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Rand McNally TND 750 7-inch GPS Truck Navigator",
+    "price": 329.99,
+    "description": "The Rand McNally TND 750 is a 7-inch GPS navigator designed for trucks, with specialized routes based on vehicle size, weight, and restrictions. It includes real-time traffic and fuel price updates.",
+    "category": "sat nav",
+    "image": "https://www.beachcamera.com/cdn/shop/products/828020_2_700x700.jpg?v=1662587601"
+  },
+  {
+    "id": 30,
+    "name": "Garmin Drive 52 GPS Navigator with Lifetime Maps",
+    "price": 119.99,
+    "description": "The Garmin Drive 52 GPS offers a 5-inch display, turn-by-turn navigation, and lifetime map updates. It also provides helpful driver alerts such as speed limit warnings and upcoming points of interest.",
+    "category": "sat nav",
+    "image": "https://www.stockmustgo.co.uk/cdn/shop/products/8864066_R_Z001A.webp?v=1685641745&width=1500"
+  },
+  {
+    "id": 31,
+    "name": "Snow MOOver Ice Scraper with Extendable Handle",
+    "price": 12.99,
+    "description": "The Snow MOOver Ice Scraper features an ergonomic, extendable handle to easily reach across your windshield. Designed for quick and efficient ice scraping, perfect for cold winter mornings.",
+    "category": "winter car accessories",
+    "image": "https://m.media-amazon.com/images/I/61nHYlezpjL.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Prestone De-Icer & Lubricant Spray",
+    "price": 6.99,
+    "description": "Prestone De-Icer & Lubricant Spray quickly melts ice and frost from your windshield and other glass surfaces. It also prevents freezing and lubricates to help your wipers perform better.",
+    "category": "winter car accessories",
+    "image": "https://www.chaucersolutions.co.uk/wp-content/uploads/2021/02/PRESTONE-TRIGGER-500ml.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Hopkins 53202 Subzero 26-Inch Snow Brush & Ice Scraper",
+    "price": 15.49,
+    "description": "The Hopkins Subzero snow brush and ice scraper combo features a heavy-duty 26-inch brush to clear snow and an ergonomic scraper to tackle ice. Built for durability and cold-weather performance.",
+    "category": "winter car accessories",
+    "image": "https://m.media-amazon.com/images/I/61BDr+xo+CL.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Rain-X 2-in-1 De-Icer and Washer Fluid",
+    "price": 7.99,
+    "description": "Rain-X 2-in-1 De-Icer and Washer Fluid is designed to remove ice and frost from your windshield, while also cleaning away dirt and grime. Provides long-lasting protection against the elements.",
+    "category": "winter car accessories",
+    "image": "https://i5.walmartimages.com/seo/Rain-X-All-Season-2-in-1-Windshield-Washer-Fluid_2c5c9672-7819-478e-b8ac-e4dbd1d6230a.e0512199cf46b4426dfcb73f0a58ad06.jpeg"
+  },
+  {
+    "id": 35,
+    "name": "Michelin 12266 3-in-1 Snow and Ice Traction Aid",
+    "price": 17.99,
+    "description": "Michelin 3-in-1 Traction Aid is a must-have for winter emergencies. It helps improve traction on icy or snowy roads, and doubles as a snow shovel and a vehicle stabilizer to help get you unstuck.",
+    "category": "winter car accessories",
+    "image": "https://m.media-amazon.com/images/I/81b6DUctFnL.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Meguiar's Ultimate Liquid Wax",
+    "price": 24.99,
+    "description": "Meguiar's Ultimate Liquid Wax provides a long-lasting protective layer with a brilliant, deep shine. This advanced formula is easy to apply and buff off, giving your car a showroom finish.",
+    "category": "car cleaning & detailing",
+    "image": "https://cdn.media.halfords.com/i/washford/548750/Meguiars-Ultimate-Liquid-Wax-473ml?fmt=auto&qlt=default&$sfcc_tile$&w=680"
+  },
+  {
+    "id": 37,
+    "name": "Chemical Guys Microfiber Towels (Pack of 3)",
+    "price": 12.99,
+    "description": "Chemical Guys Microfiber Towels are ultra-soft, lint-free, and durable. Ideal for drying, polishing, and wiping down surfaces without scratching or leaving streaks.",
+    "category": "car cleaning & detailing",
+    "image": "https://chemicalguys.co.uk/cdn/shop/files/81119-SgMUL._AC_SL1500.jpg?v=1706711901&width=1445"
+  },
+  {
+    "id": 38,
+    "name": "Autoglym Super Resin Polish",
+    "price": 17.99,
+    "description": "Autoglym Super Resin Polish is perfect for restoring and enhancing your car’s paintwork. It effectively cleans, polishes, and protects with a single application, leaving a smooth, glossy finish.",
+    "category": "car cleaning & detailing",
+    "image": "https://cdn.media.halfords.com/i/washford/300241/Autoglym-Super-Resin-Polish-1-Litre?fmt=auto&qlt=default&$sfcc_tile$&w=680"
+  },
+  {
+    "id": 39,
+    "name": "Turtle Wax ICE Snow Foam Car Wash",
+    "price": 9.99,
+    "description": "Turtle Wax ICE Snow Foam Car Wash is designed to provide an easy, no-scratch wash that lifts dirt and grime from your car's surface. Perfect for a touch-free wash with foam cannon or manual application.",
+    "category": "car cleaning & detailing",
+    "image": "https://m.media-amazon.com/images/I/71Tekf8ojrL.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Armor All Original Protectant Wipes (Pack of 25)",
+    "price": 6.99,
+    "description": "Armor All Original Protectant Wipes are a convenient way to clean and protect your car’s interior surfaces. They restore the original appearance of plastic, vinyl, and rubber, leaving a protective, non-greasy finish.",
+    "category": "car cleaning & detailing",
+    "image": "https://m.media-amazon.com/images/I/61ayZqbjlkL.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Fuzzy Leopard Print Steering Wheel Cover",
+    "price": 14.99,
+    "description": "This plush, leopard print steering wheel cover adds a touch of luxury and fun to your car interior. Made from soft and durable material, it provides a comfortable grip and protects your wheel from wear and tear.",
+    "category": "car accessories & comfort items",
+    "image": "https://contentinfo.autozone.com/znetcs/product-info/en/US/agi/22-1-97657-9/image/8/"
+  },
+  {
+    "id": 42,
+    "name": "Bdk PolyPro Car Seat Covers (Set of 2)",
+    "price": 24.99,
+    "description": "These seat covers feature a unique, comfortable fabric blend for long-lasting durability and comfort. They protect your car seats from dirt, spills, and daily wear, and are easy to install with adjustable straps.",
+    "category": "car accessories & comfort items",
+    "image": "https://images-cdn.ubuy.qa/66c05972622760571d239ada-bdk-polypro-car-seat-covers-front-set-in.jpg"
+  },
+  {
+    "id": 43,
+    "name": "MagiDeal Adjustable Sun Visor Extender with Mirror",
+    "price": 9.99,
+    "description": "This adjustable sun visor extender includes a built-in mirror and helps reduce sun glare for a safer driving experience. It attaches easily to your existing sun visor and is perfect for both driver and passenger sides.",
+    "category": "car accessories & comfort items",
+    "image": "https://www.wilcodirect.co.uk/userfiles/images/products/352x352/1ef85371aeded666c63bd1d5f9ecf68e.jpg"
+  },
+  {
+    "id": 44,
+    "name": "Everlasting Comfort Memory Foam Seat Cushion",
+    "price": 39.99,
+    "description": "This orthopedic memory foam cushion provides excellent support for long drives. It relieves pressure on your back and tailbone while improving posture, ideal for people with back pain or sitting for long periods.",
+    "category": "car accessories & comfort items",
+    "image": "https://m.media-amazon.com/images/I/51nssbn2y0L.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Koomus Car Cup Holder Expander",
+    "price": 11.99,
+    "description": "This cup holder expander fits most car cup holders and allows you to hold larger drinks, as well as additional items like phones or small accessories. The 360-degree rotating base ensures easy access and stability.",
+    "category": "car accessories & comfort items",
+    "image": "https://m.media-amazon.com/images/I/51C-5WqzfJL._AC_SL1500_.jpg"
+  },
+  {
+    "id": 46,
+    "name": "StickerLab 'Baby On Board' Bumper Sticker",
+    "price": 6.99,
+    "description": "A classic 'Baby On Board' bumper sticker for your car to alert other drivers. Made of durable vinyl, it’s weather-resistant and easy to apply.",
+    "category": "bumper stickers",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/81E72afw6wS.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Sticker Junkie 'Coexist' Bumper Sticker",
+    "price": 5.99,
+    "description": "This 'Coexist' bumper sticker promotes unity and peace with its iconic symbols from different world religions. Made from high-quality vinyl, it's durable, waterproof, and fade-resistant.",
+    "category": "bumper stickers",
+    "image": "https://m.media-amazon.com/images/I/51fdyx39OHL.jpg"
+  },
+  {
+    "id": 48,
+    "name": "Hula Girl Bumper Sticker",
+    "price": 3.99,
+    "description": "Add some tropical flair to your vehicle with this Hula Girl bumper sticker. The vibrant, weatherproof design makes it perfect for outdoor use, whether on your car, truck, or camper.",
+    "category": "bumper stickers",
+    "image": "https://m.media-amazon.com/images/I/71OrVUps1TL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "id": 49,
+    "name": "The Decal Shop 'Peace Love & Cars' Bumper Sticker",
+    "price": 5.49,
+    "description": "This fun 'Peace Love & Cars' bumper sticker is a great way to express your love for driving, peace, and good vibes. It’s made of high-quality vinyl that’s designed to last and withstand the elements.",
+    "category": "bumper stickers",
+    "image": "https://i.etsystatic.com/19642021/r/il/28d520/2053270791/il_570xN.2053270791_b1ab.jpg"
+  },
+  {
+    "id": 50,
+    "name": "Error 404 Meowtivation Not Found Cat Bumper Sticker",
+    "price": 4.99,
+    "description": "A humorous 'Error 404 Meowtivation Not Found' bumper sticker featuring a cat and the classic 404 error text. Made from durable, high-quality vinyl, this sticker is perfect for cat lovers who enjoy a little tech humor.",
+    "category": "bumper stickers",
+    "image": "https://ih1.redbubble.net/image.2351642339.3534/st,small,507x507-pad,600x600,f8f8f8.jpg"
+  }
+]

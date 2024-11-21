@@ -1,6 +1,6 @@
 const sequelize = require("./db");
 const { Item } = require("./models");
-const items = require("./items.json");
+const items = require("./items2.json");
 
 async function seed() {
   await sequelize.sync({ force: true });
