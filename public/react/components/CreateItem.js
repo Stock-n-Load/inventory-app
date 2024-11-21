@@ -55,7 +55,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
 
   const handleDescriptionChange = (e) => {
     const textarea = e.target;
-    textarea.style.height = "auto"; 
+    textarea.style.height = "auto";
     textarea.style.height = `${textarea.scrollHeight}px`;
     setDescription(e.target.value);
   };
@@ -102,7 +102,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
             Category
             <textarea
               className="NewItemForm"
-              placeholder="e.g Electonics, Clothing..."
+              placeholder="e.g Tires, Motor Oil..."
               value={category}
               required
               onChange={(e) => setCategory(e.target.value)}
@@ -122,7 +122,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
             Description
             <textarea
               className="NewItemForm"
-              placeholder="Minimum 10 Characters"
+              placeholder="Must be between 10-1000 Characters"
               value={description}
               required
               onChange={handleDescriptionChange}

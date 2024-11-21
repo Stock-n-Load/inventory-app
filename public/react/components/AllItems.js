@@ -36,14 +36,16 @@ function AllItems({ view, setView, items, setActiveItem }) {
 
   return (
     <>
-      <div className="logo-container">
-        <img src={logo} alt="logo" className="logo" />
-        <h1 className="logo-title">Stock-N-Load</h1>
+      <div className="navBar">
+        <div className="logo-container">
+          <img src={logo} alt="logo" className="logo" />
+          <h1 className="logo-title">Stock-N-Load</h1>
+        </div>
       </div>
       <div className="searchBarContainer-1">
         <SearchBar setSearchTerm={setSearchTerm} />
         <button
-          className="btn btn-success createItemBtn-1"
+          className="btn btn-primary createItemBtn-1"
           onClick={() => setView(3)}
         >
           <span className="createItemText-1">Create Item</span>{" "}
