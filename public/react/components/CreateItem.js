@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import apiURL from "../api";
 import "./CreateItem.css";
+import logo from "../images/stock-n-load-logo.png";
 
 function CreateItem({ setView, setActiveItem, fetchData }) {
   const [name, setName] = useState("");
@@ -69,22 +70,28 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
 
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center p-3">
-        <h1 className="m-0">Stock n Load</h1>
-        <button
-          type="button"
-          className="btn btn-secondary rounded-5 me-2"
-          onClick={() => setView(1)}
-        >
-          <i className="fa-solid fa-arrow-left me-4 "></i>
-          Back
-        </button>
+      <div className="navBar">
+        <div className="logo-container">
+          <img src={logo} alt="logo" className="logo" />
+          <h1 className="logo-title">Stock-N-Load</h1>
+        </div>
+        <div className="d-flex justify-content-end back-btn-container">
+          <button
+            type="button"
+            className="btn btn-secondary back-btn rounded-5 btn-sm"
+            onClick={() => setView(1)}
+          >
+            <i className="fa-solid fa-arrow-left"></i>
+            <span className="backbtn-text ms-4">Back</span>
+          </button>
+        </div>
       </div>
+
       <h2 className="createHeader">Create Item</h2>
       {loading && <p>Loading...</p>}
       {posted && <p>Item successfully created!</p>}
       <form className="SubmissionForm" onSubmit={handleSubmit}>
-        <ol>
+        <ol className="p-0">
           <li>
             Name
             <textarea
@@ -136,7 +143,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
             ></textarea>
           </li>
         </ol>
-        <button className="submit" type="submit" disabled={loading}>
+        <button className="submit m-0" type="submit" disabled={loading}>
           Add Item
         </button>
       </form>

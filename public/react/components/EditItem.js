@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import apiURL from "../api";
 import "./EditItem.css";
+import logo from "../images/stock-n-load-logo.png";
 
 function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
   // Initialize state with active item values if available
@@ -51,7 +52,7 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
 
   const handleDescriptionChange = (e) => {
     const textarea = e.target;
-    textarea.style.height = "auto"; 
+    textarea.style.height = "auto";
     textarea.style.height = `${textarea.scrollHeight}px`;
     setDescription(e.target.value);
   };
@@ -60,32 +61,29 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
     const textarea = document.getElementById("description-textarea");
     if (textarea) {
       textarea.style.height = "auto";
-      textarea.style.height = `${textarea.scrollHeight}px`; 
+      textarea.style.height = `${textarea.scrollHeight}px`;
     }
   }, [activeItem, description]);
 
-  useEffect(() => {
-    const textarea = document.getElementById("image-textarea");
-    if (textarea) {
-      textarea.style.height = "auto";
-      textarea.style.height = `${textarea.scrollHeight}px`; 
-    }
-  }, [activeItem, imgurl]);
-
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center p-3">
-        <h1 className="m-0">Stock n Load</h1>
-        <button
-          type="button"
-          className="btn btn-secondary rounded-5 me-2"
-          onClick={() => setView(1)}
-        >
-          <i className="fa-solid fa-arrow-left me-4 "></i>
-          Back
-        </button>
+      <div className="navBar">
+        <div className="logo-container">
+          <img src={logo} alt="logo" className="logo" />
+          <h1 className="logo-title">Stock-N-Load</h1>
+        </div>
+        <div className="d-flex justify-content-end back-btn-container">
+          <button
+            type="button"
+            className="btn btn-secondary back-btn rounded-5 btn-sm"
+            onClick={() => setView(1)}
+          >
+            <i className="fa-solid fa-arrow-left"></i>
+            <span className="backbtn-text ms-4">Back</span>
+          </button>
+        </div>
       </div>
-      <h2 className="createHeader">Edit Item</h2>
+
       <form className="SubmissionForm" onSubmit={handleSubmit}>
         <ol>
           <li>
@@ -119,7 +117,6 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
             <textarea
               className="NewItemForm"
               placeholder="Image Url"
-              id="image-textarea"
               required
               value={imgurl}
               onChange={(e) => setImgurl(e.target.value)}
@@ -129,14 +126,15 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
             <textarea
               className="NewItemForm"
               placeholder="Description"
-              id="description-textarea"
               required
               value={description}
               onChange={handleDescriptionChange}
             ></textarea>
           </li>
         </ol>
-        <button className="submit" type="submit">Update</button>
+        <button className="submit" type="submit">
+          Update
+        </button>
       </form>
     </>
   );
