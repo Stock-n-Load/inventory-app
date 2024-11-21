@@ -76,7 +76,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
       <h2 className="createHeader">Create Item</h2>
       {loading && <p>Loading...</p>}
       {posted && <p>Item successfully created!</p>}
-      <form onSubmit={handleSubmit}>
+      <form className="SubmissionForm" onSubmit={handleSubmit}>
         <ol>
           <li>
             Name

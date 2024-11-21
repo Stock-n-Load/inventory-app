@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import apiURL from "../api";
+import "./EditItem.css";
 
 function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
   // Initialize state with active item values if available
@@ -77,7 +78,7 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
         </button>
       </div>
       <h2 className="createHeader">Edit Item</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="SubmissionForm" onSubmit={handleSubmit}>
         <ol>
           <li>
             <textarea
