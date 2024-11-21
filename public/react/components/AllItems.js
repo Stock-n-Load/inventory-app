@@ -47,8 +47,9 @@ function AllItems({ view, setView, items, setActiveItem }) {
         </button>
       </div>
       <div className="dropdown-1">
-        <p>Sort By:</p>
+        <label htmlFor="sort-dropdown">Sort By:</label>
         <select
+          id="sort-dropdown"
           className="form-select form-select-sm"
           onChange={(e) => setSortOption(e.target.value)}
           value={sortOption}
