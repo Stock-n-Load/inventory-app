@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./Search";
 import "./AllItems.css";
+import logo from "../images/stock-n-load-logo.png";
 
 function AllItems({ view, setView, items, setActiveItem }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,7 +36,10 @@ function AllItems({ view, setView, items, setActiveItem }) {
 
   return (
     <>
-      <h1 className="header-1">View All Items</h1>
+      <div className="logo-container">
+        <img src={logo} alt="logo" className="logo" />
+        <h1 className="logo-title">Stock-N-Load</h1>
+      </div>
       <div className="searchBarContainer-1">
         <SearchBar setSearchTerm={setSearchTerm} />
         <button
@@ -43,7 +47,7 @@ function AllItems({ view, setView, items, setActiveItem }) {
           onClick={() => setView(3)}
         >
           <span className="createItemText-1">Create Item</span>{" "}
-          <i class="fa-solid fa-plus"></i>
+          <i className="fa-solid fa-plus"></i>
         </button>
       </div>
       <div className="dropdown-1">
@@ -61,8 +65,7 @@ function AllItems({ view, setView, items, setActiveItem }) {
           <option value="name-desc">Name: Z to A</option>
         </select>
       </div>
-
-      <div className="itemsContainer-1">
+      <div className="itemsContainer-1 my-5 mx-3">
         {sortedItems &&
           sortedItems.map((item) => (
             <div
