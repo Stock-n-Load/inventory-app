@@ -1,17 +1,29 @@
+.sticky-top {
+  background: white;
+  padding-bottom: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.sticky-top.scrolled {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
 .itemsContainer-1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  /* justify-content: flex-start; */
+  margin-top: 50px;
 }
 
-.card {
-  /* min-width: 300px !important; */
-  /* max-width: 300px; */
-  /* display: flex; */
+.itemCard-1 {
   width: 300px;
-  /* margin: 10px 10px; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.itemCard-1:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .item-img-1 {
@@ -33,7 +45,6 @@
   display: flex;
   width: 75%;
   margin: auto;
-  margin-top: 2rem;
 }
 
 .searchBar-1 {
