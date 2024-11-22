@@ -79,3 +79,8 @@ p.status {
   display: grid;
   justify-content: center;
 }
+
+.error-text {
+  color: red;
+  margin-left: 5px;
+}
