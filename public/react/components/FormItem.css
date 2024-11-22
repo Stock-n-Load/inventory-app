@@ -1,7 +1,5 @@
 h2.formHeader {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
 }
 
 p.status {
@@ -12,7 +10,7 @@ p.status {
 form.SubmissionForm {
   flex-grow: 5;
   max-width: 500px;
-  margin: 0 2rem 2rem;
+  margin: 3rem 2rem;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;

@@ -98,9 +98,9 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
         </div>
       </div>
 
-      <h2 className="formHeader">Edit Item</h2>
       <div className="d-flex justify-content-center">
         <form className="SubmissionForm" onSubmit={handleSubmit}>
+          <h2 className="formHeader">Edit Item</h2>
           <ol className="fieldContainer">
             <li>
               <label for="editName">Name</label>
