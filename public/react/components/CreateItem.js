@@ -11,6 +11,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [posted, setPosted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   async function postItem(name, price, category, imgurl, description) {
     setLoading(true);
@@ -36,9 +37,10 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
         await new Promise((resolve) => setTimeout(resolve, 100));
         setActiveItem(data);
         console.log(data);
-      } else {
-        console.error("Failed to create item.");
-        setView(3);
+        return true
+      } else if (response.status === 400) {
+        const errorData = await response.json();
+        handleErrors(errorData.errors);
       }
     } catch (error) {
       console.error("Error posting item:", error);
@@ -47,11 +49,22 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
     }
   }
 
+  function handleErrors(errorArray) {
+    const formattedErrors = errorArray.reduce((acc, error) => {
+      acc[error.path] = error.msg;
+      return acc;
+    }, {});
+    setErrors(formattedErrors);
+  }
+  
+
   async function handleSubmit(e) {
     e.preventDefault();
-    postItem(name, price, category, imgurl, description);
-    fetchData();
-    setView(2);
+    const posted = await postItem(name, price, category, imgurl, description);
+    if (posted) {
+      fetchData();
+      setView(2);
+    }
   }
 
   const handleDescriptionChange = (e) => {
@@ -88,8 +101,8 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
       </div>
 
       <h2 className="createHeader">Create Item</h2>
-      {loading && <p>Loading...</p>}
-      {posted && <p>Item successfully created!</p>}
+      {loading && <p className="status">Loading...</p>}
+      {posted && <p className="status">Item successfully created!</p>}
       <form className="SubmissionForm" onSubmit={handleSubmit}>
         <ol className="p-0">
           <li>
@@ -98,9 +111,9 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               className="NewItemForm"
               placeholder="Your Items Name"
               value={name}
-              required
               onChange={(e) => setName(e.target.value)}
             ></textarea>
+            {errors.name && <p className="error-text">{errors.name}</p>}
           </li>
           <li>
             Price
@@ -108,19 +121,20 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               className="NewItemForm"
               placeholder="Must be Numbers only"
               value={price}
-              required
               onChange={(e) => setPrice(e.target.value)}
             ></textarea>
+            {errors.price && <p className="error-text">{errors.price}</p>}
           </li>
+          
           <li>
             Category
             <textarea
               className="NewItemForm"
               placeholder="e.g Tires, Motor Oil..."
               value={category}
-              required
               onChange={(e) => setCategory(e.target.value)}
             ></textarea>
+            {errors.category && <p className="error-text">{errors.category}</p>}
           </li>
           <li>
             Image Url
@@ -128,9 +142,9 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               className="NewItemForm"
               placeholder="Must be a URL format"
               value={imgurl}
-              required
               onChange={handleImageChange}
             ></textarea>
+            {errors.image && <p className="error-text">{errors.image}</p>}
           </li>
           <li>
             Description
@@ -138,9 +152,9 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
               className="NewItemForm"
               placeholder="Must be between 10-1000 Characters"
               value={description}
-              required
               onChange={handleDescriptionChange}
             ></textarea>
+            {errors.description && <p className="error-text">{errors.description}</p>}
           </li>
         </ol>
         <button className="submit m-0" type="submit" disabled={loading}>

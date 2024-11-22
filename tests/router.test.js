@@ -49,10 +49,10 @@ describe("Item API routes", () => {
   test("POST /new - Should create a new item", async () => {
     const newItemData = {
       name: "New Item",
-      description: "New description",
+      description: "New description that is at least 10 chars",
       price: 20,
       category: "New Category",
-      image: "new-image-url",
+      image: "www.new-image-url.com",
     };
 
     Item.create.mockResolvedValue(mockItem);

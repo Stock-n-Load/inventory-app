@@ -57,6 +57,13 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
     setDescription(e.target.value);
   };
 
+  const handleImageChange = (e) => {
+    const textarea = e.target;
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    setImgurl(e.target.value);
+  };
+
   useEffect(() => {
     const textarea = document.getElementById("description-textarea");
     if (textarea) {
@@ -64,6 +71,14 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
       textarea.style.height = `${textarea.scrollHeight}px`;
     }
   }, [activeItem, description]);
+
+  useEffect(() => {
+    const textarea = document.getElementById("image-textarea");
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${textarea.scrollHeight}px`; 
+    }
+  }, [activeItem, imgurl]);
 
   return (
     <>
@@ -117,9 +132,10 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
             <textarea
               className="NewItemForm"
               placeholder="Image Url"
+              id="image-textarea"
               required
               value={imgurl}
-              onChange={(e) => setImgurl(e.target.value)}
+              onChange={handleImageChange}
             ></textarea>
           </li>
           <li>
@@ -127,6 +143,7 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
               className="NewItemForm"
               placeholder="Description"
               required
+              id="description-textarea"
               value={description}
               onChange={handleDescriptionChange}
             ></textarea>

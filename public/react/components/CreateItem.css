@@ -3,6 +3,11 @@ h2.createHeader {
   justify-content: center;
 }
 
+p.status{
+  display: grid;
+  justify-content: center;
+}
+
 form.SubmissionForm {
   max-width: 500px;
   margin: 0 auto;
