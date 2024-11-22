@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import apiURL from "../api";
-import "./EditItem.css";
+import "./FormItem.css";
 import logo from "../images/stock-n-load-logo.png";
 
 function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
@@ -99,60 +99,73 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
         </div>
       </div>
 
-      <form className="SubmissionForm" onSubmit={handleSubmit}>
-        <ol>
-          <li>
-            <textarea
-              className="NewItemForm"
-              placeholder="Name"
+      <h2 className="formHeader">Edit Item</h2>
+      <div className="d-flex justify-content-center">
+        <form className="SubmissionForm" onSubmit={handleSubmit}>
+          <ol className="fieldContainer">
+            <li>
+              <label for="editName">Name</label>
+              <textarea
+                id="editName"
+                className="NewItemForm"
+                placeholder="Name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></textarea>
+            </li>
+            <li>
+              <label for="editPrice">Price</label>
+              <textarea
+                id="editPrice"
+                className="NewItemForm"
+                placeholder="Price"
+                required
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              ></textarea>
+            </li>
+            <li>
+              <label for="editCategory">Category</label>
+              <textarea
+                id="editCategory"
+                className="NewItemForm"
+                placeholder="Category"
+                required
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              ></textarea>
+            </li>
+            <li>
+              <label for="editImageURL">Image URL</label>
+              <textarea
+                id="editImageURL"
+                className="NewItemForm"
+                placeholder="Image Url"
+                id="image-textarea"
               required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            ></textarea>
-          </li>
-          <li>
-            <textarea
-              className="NewItemForm"
-              placeholder="Price"
-              required
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-            ></textarea>
-          </li>
-          <li>
-            <textarea
-              className="NewItemForm"
-              placeholder="Category"
-              required
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            ></textarea>
-          </li>
-          <li>
-            <textarea
-              className="NewItemForm"
-              placeholder="Image Url"
-              id="image-textarea"
-              required
-              value={imgurl}
-              onChange={handleImageChange}
-            ></textarea>
-          </li>
-          <li>
-            <textarea
-              className="NewItemForm"
-              placeholder="Description"
-              required
-              id="description-textarea"
+                value={imgurl}
+                onChange={handleImageChange}
+              ></textarea>
+            </li>
+            <li>
+              <label for="editDescription">Description</label>
+              <textarea
+                id="editDescription"
+                className="NewItemForm"
+                placeholder="Description"
+                required
+                id="description-textarea"
               value={description}
-              onChange={handleDescriptionChange}
-            ></textarea>
-          </li>
-        </ol>
-        <button className="submit" type="submit">
-          Update
-        </button>
-      </form>
+                onChange={handleDescriptionChange}
+              ></textarea>
+            </li>
+          </ol>
+          <button className="submit" type="submit">
+            Update
+          </button>
+        </form>
+      </div>
     </>
   );
 }
