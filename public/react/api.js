@@ -3,8 +3,8 @@ let apiURL;
 if (process.env.NODE_ENV === "development") {
   apiURL = process.env.REACT_APP_API_URL || "http://localhost:3000/api";
 } else {
-  console.log("hello");
-  apiURL = "/api";
+  apiURL = process.env.REACT_APP_API_URL || "https://git.heroku.com/protected-wildwood-47583.git";
 }
 
 export default apiURL;
+
