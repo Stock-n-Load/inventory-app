@@ -1,16 +1,14 @@
 const request = require("supertest");
 const express = require("express");
 const { Item } = require("../server/models/index");
-const router = require("../server/routes/items"); // Update this path accordingly
+const router = require("../server/routes/items");
 
-jest.mock("../server/models/index"); // Mock the Item model
+jest.mock("../server/models/index");
 
-// Setup express app for testing
 const app = express();
 app.use(router);
 
 describe("Item API routes", () => {
-  // Mock data
   const mockItem = {
     id: 1,
     name: "Test Item",
@@ -21,12 +19,10 @@ describe("Item API routes", () => {
   };
 
   beforeEach(() => {
-    // Reset all mocks before each test to avoid interference
     jest.resetAllMocks();
   });
 
   test("GET / - Should return all items", async () => {
-    // Mock the Item.findAll method
     Item.findAll.mockResolvedValue([mockItem]);
 
     const response = await request(app).get("/");
@@ -52,7 +48,7 @@ describe("Item API routes", () => {
       description: "New description that is at least 10 chars",
       price: 20,
       category: "New Category",
-      image: "www.new-image-url.com",
+      image: "www.new-image-url.com"
     };
 
     Item.create.mockResolvedValue(mockItem);
@@ -68,42 +64,36 @@ describe("Item API routes", () => {
   });
 
   it("should delete an item by ID", async () => {
-    // Mock the instance that will be returned by findByPk
     const mockItem = {
-      id: 1,
-      name: "Test Item",
-      description: "Test description",
-      price: 10,
-      category: "Test Category",
-      image: "test-image-url",
-      destroy: jest.fn().mockResolvedValue(true), // Mock the destroy method
+      name: "New Item",
+      description: "New description that is at least 10 chars",
+      price: 20,
+      category: "New Category",
+      image: "www.new-image-url.com",
+      destroy: jest.fn().mockResolvedValue(true)
     };
   
-    // Mock findByPk to return the mock item
     Item.findByPk.mockResolvedValue(mockItem);
   
-    // Step 2: Send the DELETE request
     const response = await request(app).delete(`/${mockItem.id}`);
   
-    // Step 3: Assert that the response status is 204 (No Content)
     expect(response.status).toBe(204);
   
-    // Step 4: Verify the item was actually deleted by checking destroy was called
     expect(mockItem.destroy).toHaveBeenCalledTimes(1);
   });
   
 
   test("PUT /:id - Should update an item", async () => {
     const updatedItemData = {
-      name: "Updated Item",
-      description: "Updated description",
-      price: 25,
-      category: "Updated Category",
-      image: "updated-image-url",
+      name: "New Item",
+      description: "New description that is at least 10 chars",
+      price: 20,
+      category: "New Category",
+      image: "www.new-image-url.com"
     };
 
     Item.findByPk.mockResolvedValue(mockItem);
-    Item.update.mockResolvedValue([1]); // mock sequelize update result
+    Item.update.mockResolvedValue([1]);
 
     const response = await request(app)
       .put("/1")
