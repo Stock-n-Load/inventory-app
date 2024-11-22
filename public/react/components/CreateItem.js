@@ -95,11 +95,12 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
           </button>
         </div>
       </div>
-      <h2 className="formHeader">Create Item</h2>
+
       {loading && <p className="status">Loading...</p>}
       {posted && <p className="status">Item successfully created!</p>}
       <div className="d-flex justify-content-center">
         <form className="SubmissionForm" onSubmit={handleSubmit}>
+          <h2 className="formHeader">Create Item</h2>
           <ol className="fieldContainer p-0">
             <li>
               <label for="createName">Name</label>
