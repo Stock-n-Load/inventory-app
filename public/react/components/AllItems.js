@@ -6,6 +6,7 @@ import logo from "../images/stock-n-load-logo.png";
 function AllItems({ view, setView, items, setActiveItem }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const filteredItems = items.filter(
     (item) =>
@@ -34,40 +35,52 @@ function AllItems({ view, setView, items, setActiveItem }) {
     setView(2);
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <div className="navBar">
-        <div className="logo-container">
-          <img src={logo} alt="logo" className="logo-all-items" />
-          <h1 className="logo-title">Stock-N-Load</h1>
+      <div className={`sticky-top ${isScrolled ? "scrolled" : ""}`}>
+        <div className="navBar">
+          <div className="logo-container">
+            <img src={logo} alt="logo" className="logo-all-items" />
+            <h1 className="logo-title">Stock-N-Load</h1>
+          </div>
+        </div>
+        <div className="searchBarContainer-1">
+          <SearchBar setSearchTerm={setSearchTerm} />
+          <button
+            className="btn btn-primary createItemBtn-1"
+            onClick={() => setView(3)}
+          >
+            <span className="createItemText-1">Create Item</span>{" "}
+            <i className="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div className="dropdown-1">
+          <label htmlFor="sort-dropdown">Sort By:</label>
+          <select
+            id="sort-dropdown"
+            className="form-select form-select-sm"
+            onChange={(e) => setSortOption(e.target.value)}
+            value={sortOption}
+          >
+            <option value="">All</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+          </select>
         </div>
       </div>
-      <div className="searchBarContainer-1">
-        <SearchBar setSearchTerm={setSearchTerm} />
-        <button
-          className="btn btn-primary createItemBtn-1"
-          onClick={() => setView(3)}
-        >
-          <span className="createItemText-1">Create Item</span>{" "}
-          <i className="fa-solid fa-plus"></i>
-        </button>
-      </div>
-      <div className="dropdown-1">
-        <label htmlFor="sort-dropdown">Sort By:</label>
-        <select
-          id="sort-dropdown"
-          className="form-select form-select-sm"
-          onChange={(e) => setSortOption(e.target.value)}
-          value={sortOption}
-        >
-          <option value="">All</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="name-asc">Name: A to Z</option>
-          <option value="name-desc">Name: Z to A</option>
-        </select>
-      </div>
-      <div className="itemsContainer-1 my-5 mx-3">
+      <div className="itemsContainer-1 mb-5 mx-3">
         {sortedItems &&
           sortedItems.map((item) => (
             <div
