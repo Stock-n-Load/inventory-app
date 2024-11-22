@@ -60,7 +60,7 @@ function AllItems({ view, setView, items, setActiveItem }) {
             className="btn btn-primary createItemBtn-1"
             onClick={() => setView(3)}
           >
-            <span className="createItemText-1">Create Item</span>{" "}
+            <span className="createItemText-1 me-2">Create Item</span>
             <i className="fa-solid fa-plus"></i>
           </button>
         </div>

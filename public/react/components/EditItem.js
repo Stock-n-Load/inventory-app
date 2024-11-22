@@ -46,7 +46,6 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // Call the updateItem function with the active item ID and new data
     updateItem(activeItem.id, name, price, category, imgurl, description);
   }
 
@@ -76,7 +75,7 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
     const textarea = document.getElementById("image-textarea");
     if (textarea) {
       textarea.style.height = "auto";
-      textarea.style.height = `${textarea.scrollHeight}px`; 
+      textarea.style.height = `${textarea.scrollHeight}px`;
     }
   }, [activeItem, imgurl]);
 
@@ -137,26 +136,24 @@ function EditItem({ setView, activeItem, setActiveItem, fetchData }) {
               ></textarea>
             </li>
             <li>
-              <label for="editImageURL">Image URL</label>
+              <label for="image-textarea">Image URL</label>
               <textarea
-                id="editImageURL"
                 className="NewItemForm"
                 placeholder="Image Url"
                 id="image-textarea"
-              required
+                required
                 value={imgurl}
                 onChange={handleImageChange}
               ></textarea>
             </li>
             <li>
-              <label for="editDescription">Description</label>
+              <label for="description-textarea">Description</label>
               <textarea
-                id="editDescription"
                 className="NewItemForm"
                 placeholder="Description"
                 required
                 id="description-textarea"
-              value={description}
+                value={description}
                 onChange={handleDescriptionChange}
               ></textarea>
             </li>

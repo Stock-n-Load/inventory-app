@@ -4,7 +4,7 @@ h2.formHeader {
   margin-bottom: 10px;
 }
 
-p.status{
+p.status {
   display: grid;
   justify-content: center;
 }
@@ -78,4 +78,9 @@ button:hover:enabled.submit {
 p.status {
   display: grid;
   justify-content: center;
+}
+
+.error-text {
+  color: red;
+  margin-left: 5px;
 }

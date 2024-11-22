@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import apiURL from "../api";
-import "./SingelItem.css";
+import "./SingleItem.css";
 import logo from "../images/stock-n-load-logo.png";
 
 function SingleItem({ view, setView, activeItem, setActiveItem, fetchData }) {

@@ -29,15 +29,12 @@
 .item-img-1 {
   width: 80%;
   margin: auto;
-  /* padding-top: 1rem; */
   padding-bottom: 2rem;
   max-height: 300px;
 }
 
 .card-body {
   display: flex;
-  /* align-content: flex-end;*/
-  /* justify-content: end; */
   flex-direction: column;
 }
 
