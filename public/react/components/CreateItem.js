@@ -11,6 +11,7 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [posted, setPosted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   async function postItem(name, price, category, imgurl, description) {
     setLoading(true);
@@ -36,9 +37,10 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
         await new Promise((resolve) => setTimeout(resolve, 100));
         setActiveItem(data);
         console.log(data);
-      } else {
-        console.error("Failed to create item.");
-        setView(3);
+        return true
+      } else if (response.status === 400) {
+        const errorData = await response.json();
+        handleErrors(errorData.errors);
       }
     } catch (error) {
       console.error("Error posting item:", error);
@@ -47,11 +49,22 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
     }
   }
 
+  function handleErrors(errorArray) {
+    const formattedErrors = errorArray.reduce((acc, error) => {
+      acc[error.path] = error.msg;
+      return acc;
+    }, {});
+    setErrors(formattedErrors);
+  }
+  
+
   async function handleSubmit(e) {
     e.preventDefault();
-    postItem(name, price, category, imgurl, description);
-    fetchData();
-    setView(2);
+    const posted = await postItem(name, price, category, imgurl, description);
+    if (posted) {
+      fetchData();
+      setView(2);
+    }
   }
 
   const handleDescriptionChange = (e) => {
@@ -88,8 +101,8 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
       </div>
 
       <h2 className="formHeader">Create Item</h2>
-      {loading && <p>Loading...</p>}
-      {posted && <p>Item successfully created!</p>}
+      {loading && <p className="status">Loading...</p>}
+      {posted && <p className="status">Item successfully created!</p>}
       <div className="d-flex justify-content-center">
         <form className="SubmissionForm" onSubmit={handleSubmit}>
           <ol className="fieldContainer p-0">
@@ -100,10 +113,10 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
                 className="NewItemForm"
                 placeholder="Your Item's Name"
                 value={name}
-                required
-                onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
               ></textarea>
-            </li>
+              {errors.name && <span className="error-text">{errors.name}</span>}
+          </li>
             <li>
               <label for="createPrice">Price</label>
               <textarea
@@ -111,21 +124,22 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
                 className="NewItemForm"
                 placeholder="Must be Numbers only"
                 value={price}
-                required
-                onChange={(e) => setPrice(e.target.value)}
+                  onChange={(e) => setPrice(e.target.value)}
               ></textarea>
-            </li>
-            <li>
+              {errors.price && <span className="error-text">{errors.price}</span>}
+          </li>
+            
+          <li>
               <label for="createCategory">Category</label>
               <textarea
                 id="createCategory"
                 className="NewItemForm"
                 placeholder="e.g Tires, Motor Oil..."
                 value={category}
-                required
-                onChange={(e) => setCategory(e.target.value)}
+                  onChange={(e) => setCategory(e.target.value)}
               ></textarea>
-            </li>
+              {errors.category && <span className="error-text">{errors.category}</span>}
+          </li>
             <li>
               <label for="createImageUrl">Image URL</label>
               <textarea
@@ -133,10 +147,10 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
                 className="NewItemForm"
                 placeholder="Must be a URL format"
                 value={imgurl}
-                required
-                onChange={handleImageChange}
+                  onChange={handleImageChange}
               ></textarea>
-            </li>
+              {errors.image && <span className="error-text">{errors.image}</span>}
+          </li>
             <li>
               <label for="createDescription">Description</label>
               <textarea
@@ -144,10 +158,10 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
                 className="NewItemForm"
                 placeholder="Must be between 10-1000 Characters"
                 value={description}
-                required
-                onChange={handleDescriptionChange}
+                  onChange={handleDescriptionChange}
               ></textarea>
-            </li>
+              {errors.description && <span className="error-text">{errors.description}</span>}
+          </li>
           </ol>
           <button className="submit" type="submit" disabled={loading}>
             Add Item
