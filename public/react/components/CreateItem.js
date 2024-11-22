@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import apiURL from "../api";
-import "./CreateItem.css";
+import "./FormItem.css";
 import logo from "../images/stock-n-load-logo.png";
 
 function CreateItem({ setView, setActiveItem, fetchData }) {
@@ -87,66 +87,73 @@ function CreateItem({ setView, setActiveItem, fetchData }) {
         </div>
       </div>
 
-      <h2 className="createHeader">Create Item</h2>
+      <h2 className="formHeader">Create Item</h2>
       {loading && <p>Loading...</p>}
       {posted && <p>Item successfully created!</p>}
-      <form className="SubmissionForm" onSubmit={handleSubmit}>
-        <ol className="p-0">
-          <li>
-            Name
-            <textarea
-              className="NewItemForm"
-              placeholder="Your Items Name"
-              value={name}
-              required
-              onChange={(e) => setName(e.target.value)}
-            ></textarea>
-          </li>
-          <li>
-            Price
-            <textarea
-              className="NewItemForm"
-              placeholder="Must be Numbers only"
-              value={price}
-              required
-              onChange={(e) => setPrice(e.target.value)}
-            ></textarea>
-          </li>
-          <li>
-            Category
-            <textarea
-              className="NewItemForm"
-              placeholder="e.g Tires, Motor Oil..."
-              value={category}
-              required
-              onChange={(e) => setCategory(e.target.value)}
-            ></textarea>
-          </li>
-          <li>
-            Image Url
-            <textarea
-              className="NewItemForm"
-              placeholder="Must be a URL format"
-              value={imgurl}
-              required
-              onChange={handleImageChange}
-            ></textarea>
-          </li>
-          <li>
-            Description
-            <textarea
-              className="NewItemForm"
-              placeholder="Must be between 10-1000 Characters"
-              value={description}
-              required
-              onChange={handleDescriptionChange}
-            ></textarea>
-          </li>
-        </ol>
-        <button className="submit m-0" type="submit" disabled={loading}>
-          Add Item
-        </button>
-      </form>
+      <div className="d-flex justify-content-center">
+        <form className="SubmissionForm" onSubmit={handleSubmit}>
+          <ol className="fieldContainer p-0">
+            <li>
+              <label for="createName">Name</label>
+              <textarea
+                id="createName"
+                className="NewItemForm"
+                placeholder="Your Item's Name"
+                value={name}
+                required
+                onChange={(e) => setName(e.target.value)}
+              ></textarea>
+            </li>
+            <li>
+              <label for="createPrice">Price</label>
+              <textarea
+                id="createPrice"
+                className="NewItemForm"
+                placeholder="Must be Numbers only"
+                value={price}
+                required
+                onChange={(e) => setPrice(e.target.value)}
+              ></textarea>
+            </li>
+            <li>
+              <label for="createCategory">Category</label>
+              <textarea
+                id="createCategory"
+                className="NewItemForm"
+                placeholder="e.g Tires, Motor Oil..."
+                value={category}
+                required
+                onChange={(e) => setCategory(e.target.value)}
+              ></textarea>
+            </li>
+            <li>
+              <label for="createImageUrl">Image URL</label>
+              <textarea
+                id="createImageUrl"
+                className="NewItemForm"
+                placeholder="Must be a URL format"
+                value={imgurl}
+                required
+                onChange={handleImageChange}
+              ></textarea>
+            </li>
+            <li>
+              <label for="createDescription">Description</label>
+              <textarea
+                id="createDescription"
+                className="NewItemForm"
+                placeholder="Must be between 10-1000 Characters"
+                value={description}
+                required
+                onChange={handleDescriptionChange}
+              ></textarea>
+            </li>
+          </ol>
+          <button className="submit" type="submit" disabled={loading}>
+            Add Item
+          </button>
+        </form>
+      </div>
     </>
   );
 }
